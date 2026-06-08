@@ -1,4 +1,15 @@
-const API_BASE = import.meta.env.VITE_API_URL || '/api';
+function resolveApiBase() {
+  const raw = import.meta.env.VITE_API_URL || '/api';
+  const trimmed = raw.replace(/\/$/, '');
+
+  if (trimmed.startsWith('http') && !trimmed.endsWith('/api')) {
+    return `${trimmed}/api`;
+  }
+
+  return trimmed;
+}
+
+const API_BASE = resolveApiBase();
 
 async function request(path, options = {}) {
   const token = localStorage.getItem('token');
