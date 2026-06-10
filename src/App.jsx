@@ -8,6 +8,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
 import CommercialServices from './pages/CommercialServices';
+import LoadingDockServices from './pages/LoadingDockServices';
 import ResidentialServices from './pages/ResidentialServices';
 import EmergencyRepair from './pages/EmergencyRepair';
 import MaintenancePrograms from './pages/MaintenancePrograms';
@@ -36,6 +37,7 @@ export default function App() {
         <Route path="about" element={<About />} />
         <Route path="services" element={<Services />} />
         <Route path="services/commercial" element={<CommercialServices />} />
+        <Route path="services/loading-dock" element={<LoadingDockServices />} />
         <Route path="services/residential" element={<ResidentialServices />} />
         <Route path="services/emergency" element={<EmergencyRepair />} />
         <Route path="services/maintenance" element={<MaintenancePrograms />} />

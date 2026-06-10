@@ -1,38 +1,39 @@
-import SEO from '../components/SEO';
-import QuoteForm from '../components/QuoteForm';
-
-const services = [
-  'Dock levelers, seals & shelters',
-  'Vehicle restraints & bumpers',
-  'Edge-of-dock levelers',
-  'Sectional overhead doors',
-  'Rolling steel & high-speed doors',
-  'Fire-rated commercial doors',
-  'Storefront door systems',
-];
+import ServicePageLayout from '../components/sections/ServicePageLayout';
+import { images } from '../lib/images';
 
 export default function CommercialServices() {
   return (
-    <>
-      <SEO title="Commercial Services" description="Commercial dock and overhead door services for NJ warehouses and facilities." />
-
-      <section className="py-16 px-4 max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <div>
-          <h1 className="text-4xl font-bold text-navy-900 mb-4">Commercial Services</h1>
-          <p className="text-gray-600 mb-6">
-            Keep your warehouse and facility running with expert dock and overhead door service.
-            We serve industrial corridors across Bergen, Hudson, Essex, Passaic, Union, and Middlesex counties.
-          </p>
-          <ul className="space-y-2">
-            {services.map((s) => (
-              <li key={s} className="flex gap-2 text-gray-700">
-                <span className="text-gold-500">✓</span> {s}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <QuoteForm defaultServiceType="Commercial Overhead Doors" />
-      </section>
-    </>
+    <ServicePageLayout
+      seoTitle="Commercial Services"
+      seoDescription="Commercial dock and overhead door services for NJ warehouses and facilities."
+      title="Commercial Door & Dock Services"
+      description="Expert commercial overhead doors, rolling steel, fire-rated systems, and storefront solutions for warehouses and facilities."
+      defaultServiceType="Commercial Overhead Doors"
+      image={images.overhead}
+      features={[
+        'Sectional overhead doors',
+        'Rolling steel & high-speed doors',
+        'Fire-rated commercial doors',
+        'Storefront door systems',
+        'Dock levelers, seals & shelters',
+        'Vehicle restraints & bumpers',
+        'Edge-of-dock levelers',
+      ]}
+      benefits={[
+        { title: 'Minimize Downtime', desc: 'Fast installs and repairs to keep your facility operational.' },
+        { title: 'Industrial Expertise', desc: 'Technicians experienced with warehouse and logistics environments.' },
+        { title: 'Code Compliant', desc: 'Fire-rated and safety-compliant installations.' },
+        { title: '6-County Coverage', desc: 'Serving Bergen, Hudson, Essex, Passaic, Union & Middlesex.' },
+      ]}
+    >
+      <p className="text-gray-700 leading-relaxed text-lg">
+        Keep your warehouse and facility running with expert dock and overhead door service.
+        We serve industrial corridors across Bergen, Hudson, Essex, Passaic, Union, and Middlesex counties.
+      </p>
+      <p className="text-gray-600 leading-relaxed mt-4">
+        Whether you need a new rolling steel door, fire-rated installation, or complete loading dock
+        equipment upgrade, our commercial team delivers professional results on schedule and on budget.
+      </p>
+    </ServicePageLayout>
   );
 }

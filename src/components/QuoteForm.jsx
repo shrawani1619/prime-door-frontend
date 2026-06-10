@@ -41,9 +41,14 @@ export default function QuoteForm({ defaultServiceType = '' }) {
     }
   };
 
+  const inputClass = 'border border-gray-200 rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent bg-gray-50 transition-all duration-300';
+
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-6 space-y-4">
-      <h3 className="text-xl font-bold text-navy-900">Request a Quote</h3>
+    <form onSubmit={handleSubmit} className="glass-card-light rounded-2xl shadow-xl p-7 sm:p-8 space-y-5">
+      <div>
+        <h3 className="text-2xl font-bold text-navy-900">Request a Quote</h3>
+        <p className="text-gray-500 text-sm mt-1">Fill out the form and we&apos;ll get back to you shortly.</p>
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <input
@@ -52,7 +57,7 @@ export default function QuoteForm({ defaultServiceType = '' }) {
           onChange={handleChange}
           placeholder="Your Name *"
           required
-          className="border border-gray-300 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-gold-500"
+          className={inputClass}
         />
         <input
           name="email"
@@ -61,7 +66,7 @@ export default function QuoteForm({ defaultServiceType = '' }) {
           onChange={handleChange}
           placeholder="Email *"
           required
-          className="border border-gray-300 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-gold-500"
+          className={inputClass}
         />
         <input
           name="phone"
@@ -69,14 +74,14 @@ export default function QuoteForm({ defaultServiceType = '' }) {
           value={form.phone}
           onChange={handleChange}
           placeholder="Phone"
-          className="border border-gray-300 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-gold-500"
+          className={inputClass}
         />
         <select
           name="serviceType"
           value={form.serviceType}
           onChange={handleChange}
           required
-          className="border border-gray-300 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-gold-500"
+          className={inputClass}
         >
           <option value="">Select Service *</option>
           {serviceTypes.map((type) => (
@@ -92,11 +97,11 @@ export default function QuoteForm({ defaultServiceType = '' }) {
         placeholder="Describe your project or issue *"
         required
         rows={4}
-        className="border border-gray-300 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-gold-500"
+        className={inputClass}
       />
 
       {status.message && (
-        <p className={`text-sm ${status.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
+        <p className={`text-sm font-medium ${status.type === 'success' ? 'text-green-600' : 'text-red-600'}`}>
           {status.message}
         </p>
       )}
@@ -104,7 +109,7 @@ export default function QuoteForm({ defaultServiceType = '' }) {
       <button
         type="submit"
         disabled={submitting}
-        className="w-full bg-navy-900 text-white py-3 rounded font-semibold hover:bg-navy-700 transition-colors disabled:opacity-50"
+        className="w-full bg-navy-900 text-white py-3.5 rounded-lg font-semibold hover:bg-navy-700 transition-all duration-300 disabled:opacity-50 hover:shadow-lg"
       >
         {submitting ? 'Submitting...' : 'Submit Quote Request'}
       </button>

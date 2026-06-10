@@ -1,28 +1,40 @@
-import SEO from '../components/SEO';
-import EmergencyCTA from '../components/EmergencyCTA';
-
-const PHONE = import.meta.env.VITE_PHONE || '+15514263018';
+import ServicePageLayout from '../components/sections/ServicePageLayout';
+import { images } from '../lib/images';
 
 export default function EmergencyRepair() {
   return (
-    <>
-      <SEO title="Emergency Repair" description="24/7 emergency dock and door repair for NJ warehouses and commercial facilities." />
-
-      <section className="py-16 px-4 max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl font-bold text-navy-900 mb-4">Emergency Repair Service</h1>
-        <p className="text-gray-600 mb-8 text-lg">
-          Warehouse down? Loading dock stuck? We provide priority emergency response
-          for commercial facilities across all 6 NJ counties.
-        </p>
-        <a
-          href={`tel:${PHONE}`}
-          className="inline-block bg-gold-500 text-navy-900 px-10 py-4 rounded font-bold text-xl hover:bg-gold-400 transition-colors"
-        >
-          Call Now: (551) 426-3018
-        </a>
-      </section>
-
-      <EmergencyCTA />
-    </>
+    <ServicePageLayout
+      seoTitle="Emergency Repair"
+      seoDescription="24/7 emergency dock and door repair for NJ warehouses and commercial facilities."
+      title="Emergency Repair Service"
+      description="Priority 24/7 emergency response for warehouses and commercial facilities when every minute of downtime counts."
+      defaultServiceType="Emergency Repair"
+      image={images.industrial}
+      showEmergencyCall
+      features={[
+        '24/7 emergency hotline',
+        'Stuck or broken overhead doors',
+        'Dock leveler failures',
+        'Rolling steel door malfunctions',
+        'Fire door emergency repairs',
+        'Opener and motor failures',
+        'Security door lockouts',
+      ]}
+      benefits={[
+        { title: 'Fast Response', desc: 'Priority dispatch across all 6 NJ counties.' },
+        { title: 'Fully Equipped', desc: 'Service trucks stocked with common parts for on-site fixes.' },
+        { title: 'Commercial Focus', desc: 'Specialists in warehouse and industrial door systems.' },
+        { title: 'Minimize Losses', desc: 'Get your facility back online as quickly as possible.' },
+      ]}
+    >
+      <p className="text-gray-700 leading-relaxed text-lg">
+        Warehouse down? Loading dock stuck? Door won&apos;t open? We provide priority emergency
+        response for commercial facilities across Bergen, Hudson, Essex, Passaic, Union, and Middlesex counties.
+      </p>
+      <p className="text-gray-600 leading-relaxed mt-4">
+        Our emergency technicians are on call 24 hours a day, 7 days a week. Call our hotline
+        for immediate assistance, or submit the form and we&apos;ll contact you right away.
+      </p>
+    </ServicePageLayout>
   );
 }
