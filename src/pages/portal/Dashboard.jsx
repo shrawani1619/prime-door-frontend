@@ -4,9 +4,9 @@ import SEO from '../../components/SEO';
 export default function PortalDashboard() {
   return (
     <>
-      <SEO title="Portal Dashboard" />
+      <SEO title="Dashboard" />
 
-      <h1 className="text-3xl font-bold text-navy-900 mb-6">Welcome to Your Portal</h1>
+      <h1 className="text-3xl font-bold text-navy-900 mb-6">Welcome</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <Link

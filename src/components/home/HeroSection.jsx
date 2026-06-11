@@ -2,13 +2,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { images } from '../../lib/images';
 
-const stats = [
-  { value: '500+', label: 'Projects' },
-  { value: '10+', label: 'Years Experience' },
-  { value: '1000+', label: 'Doors Installed' },
-  { value: '24/7', label: 'Support' },
-];
-
 export default function HeroSection() {
   return (
     <>
@@ -65,24 +58,6 @@ export default function HeroSection() {
           </div>
         </div>
       </section>
-
-      {/* Stats strip — separate from hero so content isn't cut off */}
-      <div className="relative z-10 bg-navy-800 border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-0 lg:divide-x lg:divide-white/10">
-          {stats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, y: 12 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: 0.3 + i * 0.06 }}
-              className="text-center px-2"
-            >
-              <p className="text-xl sm:text-2xl font-bold text-gold-400">{stat.value}</p>
-              <p className="text-white/60 text-xs sm:text-sm mt-0.5">{stat.label}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
     </>
   );
 }

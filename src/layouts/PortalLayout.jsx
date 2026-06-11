@@ -8,7 +8,7 @@ export default function PortalLayout() {
 
   const handleLogout = () => {
     logout();
-    navigate('/portal/login');
+    navigate('/login');
   };
 
   return (

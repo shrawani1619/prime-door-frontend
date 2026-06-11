@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import SEO from '../components/SEO';
+import CustomProjectCTA from '../components/CustomProjectCTA';
 import SectionHeading from '../components/ui/SectionHeading';
 import QuoteForm from '../components/QuoteForm';
 import { images } from '../lib/images';
@@ -108,15 +109,6 @@ export default function Services() {
         description="Explore Windco window and door services — installation, consultation, and custom projects in Bali."
       />
 
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-sm text-gray-500">
-          <Link to="/" className="hover:text-gold-500 transition-colors">Home</Link>
-          <span>/</span>
-          <span className="text-navy-900 font-medium">Services</span>
-        </div>
-      </div>
-
       {/* Hero */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <img
@@ -219,33 +211,7 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Custom project CTA */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url(${images.cta})` }}
-        />
-        <div className="absolute inset-0 bg-navy-900/88" />
-        <div className="relative max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 24 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6 leading-tight">
-              Do You Want Custom Project? Contact Us Now
-            </h2>
-            <p className="text-white/80 text-lg leading-relaxed mb-8">
-              Tell us about your vision. Whether it is a single replacement or a full home upgrade, our team
-              will design and deliver a solution tailored to your space, style, and budget.
-            </p>
-            <Link to="/contact" className="btn-primary">
-              Contact Us
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      <CustomProjectCTA description="Tell us about your vision. Whether it is a single replacement or a full home upgrade, our team will design and deliver a solution tailored to your space, style, and budget." />
 
       {/* Office locations */}
       <section className="section-padding bg-white">

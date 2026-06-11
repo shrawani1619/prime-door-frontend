@@ -7,8 +7,10 @@ export const images = {
   industrial: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80',
   loadingDock: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
   retail: 'https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80',
-  residential: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80',
-  overhead: 'https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f7?w=800&q=80',
+  residential: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1200&q=80',
+  windowInstall: 'https://images.unsplash.com/photo-1600047509807-ba8f99d28fcd?w=1200&q=80',
+  windowMeasure: 'https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=1200&q=80',
+  overhead: 'https://images.unsplash.com/photo-1566228015668-4c45dbc4e2f7?w=1200&q=80',
   cta: 'https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1920&q=80',
 };
 

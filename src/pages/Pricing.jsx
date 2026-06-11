@@ -25,15 +25,6 @@ export default function Pricing() {
         description="Windco window and door pricing plans for homes and businesses in Bali."
       />
 
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-sm text-gray-500">
-          <Link to="/" className="hover:text-gold-500 transition-colors">Home</Link>
-          <span>/</span>
-          <span className="text-navy-900 font-medium">Pricing</span>
-        </div>
-      </div>
-
       {/* Hero */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         <img
@@ -115,11 +106,7 @@ export default function Pricing() {
             <Link to="/contact" className="text-gold-500 font-semibold hover:text-gold-400 transition-colors">
               Contact us
             </Link>{' '}
-            for a detailed project quote, or visit our{' '}
-            <Link to="/faq" className="text-gold-500 font-semibold hover:text-gold-400 transition-colors">
-              FAQ page
-            </Link>{' '}
-            for common questions.
+            for a detailed project quote.
           </p>
         </div>
       </section>

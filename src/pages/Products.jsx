@@ -30,15 +30,6 @@ export default function Products() {
     <>
       <SEO title="Products" description="Commercial and residential door products, dock equipment, and parts." />
 
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-sm text-gray-500">
-          <Link to="/" className="hover:text-gold-500 transition-colors">Home</Link>
-          <span>/</span>
-          <span className="text-navy-900 font-medium">Products</span>
-        </div>
-      </div>
-
       {/* Split header */}
       <section className="grid grid-cols-1 lg:grid-cols-2 border-b border-gray-100">
         <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-12 lg:py-16 bg-white">

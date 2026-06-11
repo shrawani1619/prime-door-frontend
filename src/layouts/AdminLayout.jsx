@@ -18,7 +18,7 @@ export default function AdminLayout() {
 
   const handleLogout = () => {
     logout();
-    navigate('/portal/login');
+    navigate('/login');
   };
 
   const navLinkClass = ({ isActive }) =>
@@ -46,7 +46,7 @@ export default function AdminLayout() {
       >
         <div className="px-4 py-5 border-b border-gray-200">
           <Logo to="/admin" imgClassName="h-14 w-auto max-w-full object-contain" />
-          <p className="text-gold-500 text-xs font-semibold uppercase tracking-wider mt-3">Admin Portal</p>
+          <p className="text-gold-500 text-xs font-semibold uppercase tracking-wider mt-3">Admin</p>
         </div>
 
         <nav className="flex-1 px-3 py-4 space-y-1">

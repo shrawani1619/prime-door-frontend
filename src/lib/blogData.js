@@ -8,6 +8,8 @@ export const blogPosts = [
     title: '7 Mind Numbing Facts About Windows You must Know',
     date: 'November 27, 2021',
     category: 'Window',
+    author: 'Windco Team',
+    readTime: '6 min read',
     image: images.residential,
     imageAlt: 'Construction workers installing new window in house',
     excerpt:
@@ -27,7 +29,9 @@ export const blogPosts = [
     title: 'Do You Know How Home Value is Affected by Windows & Doors',
     date: 'November 27, 2021',
     category: 'Insight',
-    image: images.commercial,
+    author: 'Windco Team',
+    readTime: '5 min read',
+    image: images.windowInstall,
     imageAlt: 'Man measure and install curtain panel at the window',
     excerpt:
       "Upgrading your windows and doors isn't just about looks. Learn how the right choices can significantly boost your property's market value and curb appeal.",
@@ -42,10 +46,12 @@ export const blogPosts = [
   },
   {
     slug: 'choosing-right-material-window-door',
-    title: 'Choosing the Right Material To Your Window & Door',
+    title: 'Choosing the Right Material for Your Window & Door',
     date: 'November 27, 2021',
     category: 'Material',
-    image: images.overhead,
+    author: 'Windco Team',
+    readTime: '7 min read',
+    image: images.windowMeasure,
     imageAlt: 'Handyman measuring window near client',
     excerpt:
       'Wood, uPVC, aluminum — each material has its pros and cons. Our expert guide helps you pick the right fit for your climate, budget, and style.',
@@ -64,4 +70,9 @@ export function getPostBySlug(slug) {
   if (!slug) return undefined;
   const decoded = decodeURIComponent(slug);
   return blogPosts.find((post) => post.slug === decoded);
+}
+
+export function getCategoryCount(category) {
+  if (category === 'All') return blogPosts.length;
+  return blogPosts.filter((post) => post.category === category).length;
 }

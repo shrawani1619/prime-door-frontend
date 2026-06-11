@@ -22,15 +22,15 @@ export default function Login() {
 
   return (
     <>
-      <SEO title="Customer Portal Login" description="Secure login for Prime Door & Dock customer portal." />
+      <SEO title="login" description="Sign in to the Windco admin." />
 
       <div className="min-h-screen bg-navy-900 flex items-center justify-center px-4">
         <div className="bg-white rounded-lg shadow-xl p-8 w-full max-w-md">
           <div className="flex justify-center mb-6">
             <Logo linked={false} imgClassName="h-20 w-auto max-w-[260px] object-contain" />
           </div>
-          <h1 className="text-2xl font-bold text-navy-900 mb-2 text-center">Customer Portal</h1>
-          <p className="text-gray-500 text-sm mb-6">Access your service history and invoices</p>
+          <h1 className="text-2xl font-bold text-navy-900 mb-2 text-center">Admin</h1>
+          <p className="text-gray-500 text-sm mb-6 text-center">Sign in to manage quotes, jobs, and customers</p>
 
           <form onSubmit={handleSubmit} className="space-y-4">
             <input

@@ -7,7 +7,6 @@ const quickLinks = [
   { to: '/services', label: 'Services' },
   { to: '/portfolio', label: 'Projects' },
   { to: '/pricing', label: 'Pricing' },
-  { to: '/faq', label: 'FAQ' },
   { to: '/blog', label: 'Blog' },
   { to: '/contact', label: 'Contact' },
 ];
@@ -62,7 +61,7 @@ export default function Footer() {
               to="/"
               variant="onDark"
               className="mb-5"
-              imgClassName="h-14 w-auto max-w-[200px] object-contain"
+              imgClassName="h-16 w-auto max-w-[280px] object-contain"
             />
             <p className="text-sm leading-relaxed mb-6 max-w-sm">
               Windco is your trusted partner for premium window and door installation. Quality craftsmanship,

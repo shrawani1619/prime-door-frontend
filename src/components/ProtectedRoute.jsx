@@ -5,11 +5,11 @@ export default function ProtectedRoute({ children, roles = [] }) {
   const user = useAuthStore((s) => s.user);
 
   if (!user) {
-    return <Navigate to="/portal/login" replace />;
+    return <Navigate to="/login" replace />;
   }
 
   if (roles.length > 0 && !roles.includes(user.role)) {
-    return <Navigate to="/portal/login" replace />;
+    return <Navigate to="/login" replace />;
   }
 
   return children;

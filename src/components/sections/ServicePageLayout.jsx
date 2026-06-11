@@ -25,17 +25,6 @@ export default function ServicePageLayout({
     <>
       <SEO title={seoTitle} description={seoDescription} />
 
-      {/* Breadcrumb bar */}
-      <div className="bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-sm text-gray-500">
-          <Link to="/" className="hover:text-gold-500 transition-colors">Home</Link>
-          <span>/</span>
-          <Link to="/services" className="hover:text-gold-500 transition-colors">Services</Link>
-          <span>/</span>
-          <span className="text-navy-900 font-medium">{title}</span>
-        </div>
-      </div>
-
       {/* Split hero — text left, image right (not full-width dark banner) */}
       <section className="grid grid-cols-1 lg:grid-cols-2 min-h-[420px]">
         <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 py-12 lg:py-16 bg-white border-b lg:border-b-0 lg:border-r border-gray-100">

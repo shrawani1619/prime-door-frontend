@@ -1,4 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Navigate } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import MainLayout from './layouts/MainLayout';
 import PortalLayout from './layouts/PortalLayout';
 import AdminLayout from './layouts/AdminLayout';
@@ -9,7 +10,6 @@ import About from './pages/About';
 import Services from './pages/Services';
 import Products from './pages/Products';
 import Pricing from './pages/Pricing';
-import FAQ from './pages/FAQ';
 import Portfolio from './pages/Portfolio';
 // import ServiceArea from './pages/ServiceArea';
 import Contact from './pages/Contact';
@@ -30,14 +30,15 @@ import PortalInvoiceView from './pages/portal/InvoiceView';
 
 export default function App() {
   return (
-    <Routes>
+    <>
+      <ScrollToTop />
+      <Routes>
       <Route element={<MainLayout />}>
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="services" element={<Services />} />
         <Route path="products" element={<Products />} />
         <Route path="pricing" element={<Pricing />} />
-        <Route path="faq" element={<FAQ />} />
         <Route path="portfolio" element={<Portfolio />} />
         {/* <Route path="service-area" element={<ServiceArea />} /> */}
         <Route path="contact" element={<Contact />} />
@@ -47,7 +48,8 @@ export default function App() {
         </Route>
       </Route>
 
-      <Route path="portal/login" element={<Login />} />
+      <Route path="login" element={<Login />} />
+      <Route path="portal/login" element={<Navigate to="/login" replace />} />
 
       <Route
         path="portal"
@@ -79,5 +81,6 @@ export default function App() {
         <Route path="invoices/:id/view" element={<AdminInvoiceView />} />
       </Route>
     </Routes>
+    </>
   );
 }

@@ -34,15 +34,6 @@ export default function Contact() {
     <>
       <SEO title="Contact" description="Contact Prime Door & Dock Solutions for quotes, inquiries, and emergency service in NJ." />
 
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-sm text-gray-500">
-          <Link to="/" className="hover:text-gold-500 transition-colors">Home</Link>
-          <span>/</span>
-          <span className="text-navy-900 font-medium">Contact</span>
-        </div>
-      </div>
-
       {/* Split layout: info panel + forms */}
       <section className="min-h-[600px] grid grid-cols-1 lg:grid-cols-5">
 
@@ -109,10 +100,10 @@ export default function Contact() {
 
             <div className="mt-auto pt-6 border-t border-white/10">
               <Link
-                to="/portal/login"
+                to="/login"
                 className="text-gold-400 text-sm font-semibold hover:text-gold-500 transition-colors"
               >
-                Customer Portal Login →
+                Admin Login →
               </Link>
             </div>
           </div>

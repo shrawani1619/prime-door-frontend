@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
+import CustomProjectCTA from '../components/CustomProjectCTA';
 import SectionHeading from '../components/ui/SectionHeading';
-import AnimatedCounter from '../components/ui/AnimatedCounter';
 import { images } from '../lib/images';
 import { blogPosts } from '../lib/blogData';
 
@@ -27,13 +27,6 @@ const uspCards = [
     desc: 'We take pride in our work ethic. From the first consultation to the final fitting, your satisfaction is our top priority.',
     icon: '◉',
   },
-];
-
-const stats = [
-  { value: '25', suffix: '+', label: 'Years of Experience' },
-  { value: '500', suffix: '+', label: 'Satisfied Customers' },
-  { value: '1200', suffix: '+', label: 'Projects Completed' },
-  { value: '50', suffix: '+', label: 'Professional Team' },
 ];
 
 const teamMembers = [
@@ -67,15 +60,6 @@ export default function About() {
         title="About Us"
         description="Windco — 25+ years of premium window and door installation. Trusted craftsmanship for homeowners and businesses since 1996."
       />
-
-      {/* Breadcrumb */}
-      <div className="bg-gray-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center gap-2 text-sm text-gray-500">
-          <Link to="/" className="hover:text-gold-500 transition-colors">Home</Link>
-          <span>/</span>
-          <span className="text-navy-900 font-medium">About Us</span>
-        </div>
-      </div>
 
       {/* Section 1 — Hero / Intro Banner */}
       <section className="relative min-h-[520px] overflow-hidden flex items-center">
@@ -163,46 +147,15 @@ export default function About() {
         </div>
       </section>
 
-      {/* Section 4 — Stats / Numbers */}
-      <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0 bg-navy-900" />
-        <div
-          className="absolute inset-0 opacity-10"
-          style={{
-            backgroundImage:
-              'radial-gradient(circle at 25% 50%, #c9a227 0%, transparent 50%), radial-gradient(circle at 75% 50%, #c9a227 0%, transparent 50%)',
-          }}
-        />
-        <div className="relative max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="text-center"
-              >
-                <p className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gold-400 mb-2">
-                  <AnimatedCounter value={stat.value} suffix={stat.suffix} />
-                </p>
-                <p className="text-white/70 font-medium text-sm sm:text-base">{stat.label}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Section 5 — Team */}
-      <section className="section-padding bg-gray-50">
-        <div className="max-w-7xl mx-auto">
+      {/* Section 4 — Team */}
+      <section className="py-14 px-4 sm:px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-5xl mx-auto">
           <SectionHeading
             label="Our Team"
             title="Meet With Our Professional Team"
-            description="Our certified technicians bring skill, precision, and professionalism to every installation. Get to know the people behind our exceptional work."
+            description="Our certified technicians bring skill, precision, and professionalism to every installation."
           />
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {teamMembers.map((member, i) => (
               <motion.div
                 key={member.name}
@@ -210,52 +163,24 @@ export default function About() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-500 hover:-translate-y-1"
+                className="group bg-white rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300 p-6 flex flex-col items-center text-center"
               >
-                <div className="aspect-[4/5] overflow-hidden">
+                <div className="w-28 h-28 sm:w-32 sm:h-32 rounded-full overflow-hidden ring-4 ring-gold-500/25 mb-4 shrink-0">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <div className="p-6 text-center">
-                  <h3 className="font-bold text-navy-900 text-lg">{member.name}</h3>
-                  <p className="text-gold-500 text-sm font-medium mt-1">{member.role}</p>
-              </div>
+                <h3 className="font-bold text-navy-900 text-base">{member.name}</h3>
+                <p className="text-gold-500 text-sm font-medium mt-1">{member.role}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Section 6 — CTA Banner */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-fixed"
-          style={{ backgroundImage: `url(${images.cta})` }}
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-navy-900/95 via-navy-900/85 to-navy-800/80" />
-        <div className="relative max-w-4xl mx-auto text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              Do You Want a Custom Project? Contact Us Now
-            </h2>
-            <p className="text-lg text-white/80 mb-10 max-w-2xl mx-auto leading-relaxed">
-              Have a unique vision in mind? We specialize in custom window and door solutions tailored to your
-              exact specifications. Let&apos;s bring your idea to life — reach out to our team today.
-            </p>
-            <Link to="/contact" className="btn-primary">
-              Contact Us
-            </Link>
-          </motion.div>
-        </div>
-      </section>
+      <CustomProjectCTA />
 
       {/* Section 7 — Blog / Articles */}
       <section className="section-padding">

@@ -3,21 +3,12 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Logo from './Logo';
 
-const PHONE = import.meta.env.VITE_PHONE || '+62815876218';
-const PHONE_DISPLAY = '(+62)81587 6218';
-
 const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
   { to: '/portfolio', label: 'Projects' },
-  {
-    label: 'Pages',
-    children: [
-      { to: '/pricing', label: 'Pricing' },
-      { to: '/faq', label: 'FAQ' },
-    ],
-  },
+  { to: '/pricing', label: 'Pricing' },
   { to: '/blog', label: 'Blog' },
   // { to: '/service-area', label: 'Service Area' },
   { to: '/contact', label: 'Contact' },
@@ -45,17 +36,10 @@ export default function Header() {
 
   return (
     <header className="sticky top-0 z-50 bg-white shadow-sm">
-      <div className="bg-white border-b border-gray-100 text-center py-2 px-4 font-semibold text-sm sm:text-base text-navy-900">
-        <a href={`tel:${PHONE}`} className="hover:text-gold-500 transition-colors inline-flex items-center gap-2">
-          <span className="inline-block w-2 h-2 bg-red-600 rounded-full animate-pulse" />
-          Emergency Service: {PHONE_DISPLAY}
-        </a>
-      </div>
-
       <div className="bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
-            <Logo to="/" imgClassName="h-14 w-auto max-w-[200px] object-contain" />
+            <Logo to="/" imgClassName="h-16 w-auto max-w-[280px] object-contain" />
 
             <nav className="hidden lg:flex items-center gap-7">
               {navLinks.map((link) =>
@@ -68,7 +52,7 @@ export default function Header() {
                   >
                     <button
                       type="button"
-                      className={`text-sm font-medium transition-colors duration-300 flex items-center gap-1 py-1 uppercase tracking-wide ${
+                      className={`text-sm font-medium transition-colors duration-300 flex items-center gap-1 py-1 ${
                         link.children.some((c) => location.pathname === c.to)
                           ? 'text-gold-500'
                           : 'text-navy-900 hover:text-gold-500'
@@ -92,7 +76,7 @@ export default function Header() {
                               key={child.to}
                               to={child.to}
                               className={({ isActive }) =>
-                                `block px-5 py-2.5 text-xs font-semibold uppercase tracking-widest transition-colors ${
+                                `block px-5 py-2.5 text-sm font-medium transition-colors ${
                                   isActive
                                     ? 'text-gold-500 bg-gray-50'
                                     : 'text-navy-900 hover:bg-gray-50 hover:text-gold-500'
@@ -112,13 +96,6 @@ export default function Header() {
                   </NavLink>
                 )
               )}
-
-              <Link
-                to="/portal/login"
-                className="text-sm font-medium text-gray-500 hover:text-navy-900 transition-colors"
-              >
-                Portal
-              </Link>
 
               <Link to="/contact" className="btn-primary !px-5 !py-2.5 !text-sm">
                 Get a Quote
@@ -159,7 +136,7 @@ export default function Header() {
                   {navLinks.map((link) =>
                     link.children ? (
                       <div key={link.label} className="mb-2">
-                        <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider px-3 py-2">
+                        <p className="text-sm font-medium text-gray-500 px-3 py-2">
                           {link.label}
                         </p>
                         {link.children.map((child) => (
@@ -186,14 +163,7 @@ export default function Header() {
                   )}
                 </div>
 
-                <div className="mt-6 pt-6 border-t border-gray-100 space-y-3">
-                  <Link
-                    to="/portal/login"
-                    onClick={() => setOpen(false)}
-                    className="block py-2.5 px-3 text-gray-500 font-medium"
-                  >
-                    Customer Portal
-                  </Link>
+                <div className="mt-6 pt-6 border-t border-gray-100">
                   <Link
                     to="/contact"
                     onClick={() => setOpen(false)}
