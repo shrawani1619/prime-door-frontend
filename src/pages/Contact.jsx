@@ -105,15 +105,6 @@ export default function Contact() {
                 <p className="text-white/70 text-sm">Quote requests answered within 1 business day. Emergency calls dispatched immediately.</p>
               </div>
             </div>
-
-            <div className="mt-auto pt-6 border-t border-white/10">
-              <Link
-                to="/login"
-                className="text-gold-400 text-sm font-semibold hover:text-gold-500 transition-colors"
-              >
-                Admin Login →
-              </Link>
-            </div>
           </div>
         </div>
 
