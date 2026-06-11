@@ -11,7 +11,7 @@ import Products from './pages/Products';
 import Pricing from './pages/Pricing';
 import FAQ from './pages/FAQ';
 import Portfolio from './pages/Portfolio';
-import ServiceArea from './pages/ServiceArea';
+// import ServiceArea from './pages/ServiceArea';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import BlogPost from './pages/BlogPost';
@@ -39,7 +39,7 @@ export default function App() {
         <Route path="pricing" element={<Pricing />} />
         <Route path="faq" element={<FAQ />} />
         <Route path="portfolio" element={<Portfolio />} />
-        <Route path="service-area" element={<ServiceArea />} />
+        {/* <Route path="service-area" element={<ServiceArea />} /> */}
         <Route path="contact" element={<Contact />} />
         <Route path="blog">
           <Route index element={<Blog />} />

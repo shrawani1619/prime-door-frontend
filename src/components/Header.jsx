@@ -19,7 +19,7 @@ const navLinks = [
     ],
   },
   { to: '/blog', label: 'Blog' },
-  { to: '/service-area', label: 'Service Area' },
+  // { to: '/service-area', label: 'Service Area' },
   { to: '/contact', label: 'Contact' },
 ];
 

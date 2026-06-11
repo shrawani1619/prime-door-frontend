@@ -218,9 +218,9 @@ export default function Contact() {
             <Link to="/services" className="text-sm text-gray-500 hover:text-gold-500 transition-colors">
               View Services →
             </Link>
-            <Link to="/service-area" className="text-sm text-gray-500 hover:text-gold-500 transition-colors">
+            {/* <Link to="/service-area" className="text-sm text-gray-500 hover:text-gold-500 transition-colors">
               Service Area →
-            </Link>
+            </Link> */}
             <Link to="/services" className="text-sm text-gray-500 hover:text-gold-500 transition-colors">
               Emergency Repair →
             </Link>
