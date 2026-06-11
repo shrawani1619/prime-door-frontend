@@ -55,8 +55,8 @@ export default function HeroSection() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="flex flex-col sm:flex-row gap-3"
             >
-              <Link to="/services/emergency" className="btn-primary !py-3">
-                Emergency Service
+              <Link to="/services" className="btn-primary !py-3">
+                Our Services
               </Link>
               <Link to="/contact" className="btn-secondary !py-3">
                 Get a Free Quote

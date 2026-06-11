@@ -1,15 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SectionHeading from '../ui/SectionHeading';
-import { images } from '../../lib/images';
-
-const services = [
-  { title: 'Loading Dock Services', desc: 'Levelers, seals, restraints, bumpers', to: '/services/loading-dock', image: images.loadingDock },
-  { title: 'Commercial Doors', desc: 'Overhead, roll-up, fire-rated, storefront', to: '/services/commercial', image: images.overhead },
-  { title: 'Emergency Repair', desc: '24/7 priority response for warehouses', to: '/services/emergency', image: images.industrial },
-  { title: 'Maintenance Programs', desc: 'Scheduled service agreements', to: '/services/maintenance', image: images.factory },
-  { title: 'Residential Garage', desc: 'Installation, repair, openers', to: '/services/residential', image: images.garage },
-];
+import { servicesList } from '../../lib/servicesData';
 
 const cardVariants = {
   hidden: { opacity: 0, y: 30 },
@@ -27,13 +19,13 @@ export default function ServicesSection() {
         <SectionHeading
           label="What We Do"
           title="Our Services"
-          description="Full-service door and dock solutions for commercial facilities and residential properties across New Jersey."
+          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua"
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
-          {services.map((s, i) => (
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 mb-12">
+          {servicesList.map((s, i) => (
             <motion.div
-              key={s.title}
+              key={s.slug}
               custom={i}
               initial="hidden"
               whileInView="visible"
@@ -41,7 +33,7 @@ export default function ServicesSection() {
               variants={cardVariants}
             >
               <Link
-                to={s.to}
+                to="/services"
                 className="group block bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-2"
               >
                 <div className="relative h-48 overflow-hidden">
@@ -57,7 +49,7 @@ export default function ServicesSection() {
                   <h3 className="font-bold text-navy-900 text-lg mb-2 group-hover:text-gold-500 transition-colors">
                     {s.title}
                   </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed">{s.desc}</p>
+                  <p className="text-gray-600 text-sm leading-relaxed line-clamp-2">{s.description}</p>
                   <span className="inline-flex items-center mt-4 text-gold-500 font-semibold text-sm group-hover:gap-2 transition-all">
                     Learn More
                     <span className="ml-1 group-hover:translate-x-1 transition-transform">→</span>

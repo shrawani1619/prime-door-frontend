@@ -57,6 +57,9 @@ export default function Products() {
               Quality door products and commercial equipment for every application — from
               warehouse docks to residential garage doors.
             </p>
+            <Link to="/pricing" className="btn-outline mt-6 inline-block">
+              View Pricing Plans
+            </Link>
           </motion.div>
         </div>
         <div className="relative min-h-[260px] lg:min-h-0 overflow-hidden">
@@ -173,7 +176,7 @@ export default function Products() {
           </div>
           <div className="flex gap-3">
             <Link to="/contact" className="btn-primary !px-6 !py-2.5 !text-sm">Get a Quote</Link>
-            <Link to="/services" className="btn-outline !px-6 !py-2.5 !text-sm">View Services</Link>
+            <Link to="/pricing" className="btn-outline !px-6 !py-2.5 !text-sm">View Pricing</Link>
           </div>
         </div>
       </section>

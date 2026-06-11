@@ -7,15 +7,14 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home';
 import About from './pages/About';
 import Services from './pages/Services';
-import CommercialServices from './pages/CommercialServices';
-import LoadingDockServices from './pages/LoadingDockServices';
-import ResidentialServices from './pages/ResidentialServices';
-import EmergencyRepair from './pages/EmergencyRepair';
-import MaintenancePrograms from './pages/MaintenancePrograms';
 import Products from './pages/Products';
+import Pricing from './pages/Pricing';
+import FAQ from './pages/FAQ';
 import Portfolio from './pages/Portfolio';
 import ServiceArea from './pages/ServiceArea';
 import Contact from './pages/Contact';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 
 import Login from './pages/portal/Login';
 import PortalDashboard from './pages/portal/Dashboard';
@@ -36,15 +35,16 @@ export default function App() {
         <Route index element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="services" element={<Services />} />
-        <Route path="services/commercial" element={<CommercialServices />} />
-        <Route path="services/loading-dock" element={<LoadingDockServices />} />
-        <Route path="services/residential" element={<ResidentialServices />} />
-        <Route path="services/emergency" element={<EmergencyRepair />} />
-        <Route path="services/maintenance" element={<MaintenancePrograms />} />
         <Route path="products" element={<Products />} />
+        <Route path="pricing" element={<Pricing />} />
+        <Route path="faq" element={<FAQ />} />
         <Route path="portfolio" element={<Portfolio />} />
         <Route path="service-area" element={<ServiceArea />} />
         <Route path="contact" element={<Contact />} />
+        <Route path="blog">
+          <Route index element={<Blog />} />
+          <Route path=":slug" element={<BlogPost />} />
+        </Route>
       </Route>
 
       <Route path="portal/login" element={<Login />} />

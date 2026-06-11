@@ -27,7 +27,7 @@ export default function EmergencyCTA() {
           <a href={`tel:${PHONE}`} className="btn-primary">
             Call Now: (551) 426-3018
           </a>
-          <Link to="/services/emergency" className="btn-secondary">
+          <Link to="/services" className="btn-secondary">
             Learn More
           </Link>
         </div>

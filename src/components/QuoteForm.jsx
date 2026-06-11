@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { api } from '../lib/api';
 
-const serviceTypes = [
+const defaultServiceTypes = [
   'Loading Dock Services',
   'Commercial Overhead Doors',
   'Emergency Repair',
@@ -10,7 +10,14 @@ const serviceTypes = [
   'Other',
 ];
 
-export default function QuoteForm({ defaultServiceType = '' }) {
+export default function QuoteForm({
+  defaultServiceType = '',
+  title = 'Request a Quote',
+  subtitle = "Fill out the form and we'll get back to you shortly.",
+  submitLabel = 'Submit Quote Request',
+  serviceTypes = defaultServiceTypes,
+  messagePlaceholder = 'Describe your project or issue *',
+}) {
   const [form, setForm] = useState({
     name: '',
     email: '',
@@ -45,10 +52,12 @@ export default function QuoteForm({ defaultServiceType = '' }) {
 
   return (
     <form onSubmit={handleSubmit} className="glass-card-light rounded-2xl shadow-xl p-7 sm:p-8 space-y-5">
-      <div>
-        <h3 className="text-2xl font-bold text-navy-900">Request a Quote</h3>
-        <p className="text-gray-500 text-sm mt-1">Fill out the form and we&apos;ll get back to you shortly.</p>
-      </div>
+      {(title || subtitle) && (
+        <div>
+          {title && <h3 className="text-2xl font-bold text-navy-900">{title}</h3>}
+          {subtitle && <p className="text-gray-500 text-sm mt-1">{subtitle}</p>}
+        </div>
+      )}
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <input
@@ -60,21 +69,21 @@ export default function QuoteForm({ defaultServiceType = '' }) {
           className={inputClass}
         />
         <input
-          name="email"
-          type="email"
-          value={form.email}
-          onChange={handleChange}
-          placeholder="Email *"
-          required
-          className={inputClass}
-        />
-        <input
           name="phone"
           type="tel"
           value={form.phone}
           onChange={handleChange}
-          placeholder="Phone"
+          placeholder="Your Phone"
           className={inputClass}
+        />
+        <input
+          name="email"
+          type="email"
+          value={form.email}
+          onChange={handleChange}
+          placeholder="Your Email *"
+          required
+          className={`${inputClass} sm:col-span-2`}
         />
         <select
           name="serviceType"
@@ -94,7 +103,7 @@ export default function QuoteForm({ defaultServiceType = '' }) {
         name="description"
         value={form.description}
         onChange={handleChange}
-        placeholder="Describe your project or issue *"
+        placeholder={messagePlaceholder}
         required
         rows={4}
         className={inputClass}
@@ -111,7 +120,7 @@ export default function QuoteForm({ defaultServiceType = '' }) {
         disabled={submitting}
         className="w-full bg-navy-900 text-white py-3.5 rounded-lg font-semibold hover:bg-navy-700 transition-all duration-300 disabled:opacity-50 hover:shadow-lg"
       >
-        {submitting ? 'Submitting...' : 'Submit Quote Request'}
+        {submitting ? 'Submitting...' : submitLabel}
       </button>
     </form>
   );

@@ -4,7 +4,8 @@ import SEO from '../SEO';
 import QuoteForm from '../QuoteForm';
 import { serviceNav } from '../../lib/serviceNav';
 
-const PHONE = import.meta.env.VITE_PHONE || '+15514263018';
+const PHONE = import.meta.env.VITE_PHONE || '+62815876218';
+const PHONE_DISPLAY = '(+62)81587 6218';
 
 export default function ServicePageLayout({
   seoTitle,
@@ -55,7 +56,7 @@ export default function ServicePageLayout({
             <div className="flex flex-wrap gap-3">
               {showEmergencyCall ? (
                 <a href={`tel:${PHONE}`} className="btn-primary !text-base">
-                  Call (551) 426-3018
+                  Call {PHONE_DISPLAY}
                 </a>
               ) : (
                 <Link to="/contact" className="btn-primary !text-base">
@@ -121,7 +122,7 @@ export default function ServicePageLayout({
                     href={`tel:${PHONE}`}
                     className="text-gold-400 font-bold text-lg hover:text-gold-500 transition-colors"
                   >
-                    (551) 426-3018
+                    {PHONE_DISPLAY}
                   </a>
                 </div>
               </div>

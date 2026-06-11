@@ -3,25 +3,22 @@ import { Link, NavLink, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Logo from './Logo';
 
-const PHONE = import.meta.env.VITE_PHONE || '+15514263018';
-const PHONE_DISPLAY = '(551) 426-3018';
+const PHONE = import.meta.env.VITE_PHONE || '+62815876218';
+const PHONE_DISPLAY = '(+62)81587 6218';
 
 const navLinks = [
   { to: '/', label: 'Home' },
   { to: '/about', label: 'About' },
+  { to: '/services', label: 'Services' },
+  { to: '/portfolio', label: 'Projects' },
   {
-    label: 'Services',
+    label: 'Pages',
     children: [
-      { to: '/services', label: 'All Services' },
-      { to: '/services/commercial', label: 'Commercial Doors' },
-      { to: '/services/loading-dock', label: 'Loading Dock' },
-      { to: '/services/residential', label: 'Residential' },
-      { to: '/services/emergency', label: 'Emergency Repair' },
-      { to: '/services/maintenance', label: 'Maintenance' },
+      { to: '/pricing', label: 'Pricing' },
+      { to: '/faq', label: 'FAQ' },
     ],
   },
-  { to: '/products', label: 'Products' },
-  { to: '/portfolio', label: 'Portfolio' },
+  { to: '/blog', label: 'Blog' },
   { to: '/service-area', label: 'Service Area' },
   { to: '/contact', label: 'Contact' },
 ];
@@ -71,7 +68,11 @@ export default function Header() {
                   >
                     <button
                       type="button"
-                      className="text-sm font-medium transition-colors duration-300 flex items-center gap-1 py-1 text-navy-900 hover:text-gold-500"
+                      className={`text-sm font-medium transition-colors duration-300 flex items-center gap-1 py-1 uppercase tracking-wide ${
+                        link.children.some((c) => location.pathname === c.to)
+                          ? 'text-gold-500'
+                          : 'text-navy-900 hover:text-gold-500'
+                      }`}
                     >
                       {link.label}
                       <span className="text-xs">▾</span>
@@ -84,13 +85,19 @@ export default function Header() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: 8 }}
                           transition={{ duration: 0.2 }}
-                          className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 overflow-hidden"
+                          className="absolute top-full left-0 mt-0 w-52 bg-white shadow-xl border border-gray-100 py-3 overflow-hidden"
                         >
                           {link.children.map((child) => (
                             <NavLink
                               key={child.to}
                               to={child.to}
-                              className="block px-4 py-2.5 text-sm text-navy-900 hover:bg-gray-50 hover:text-gold-500 transition-colors"
+                              className={({ isActive }) =>
+                                `block px-5 py-2.5 text-xs font-semibold uppercase tracking-widest transition-colors ${
+                                  isActive
+                                    ? 'text-gold-500 bg-gray-50'
+                                    : 'text-navy-900 hover:bg-gray-50 hover:text-gold-500'
+                                }`
+                              }
                             >
                               {child.label}
                             </NavLink>
