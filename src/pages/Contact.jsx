@@ -5,9 +5,7 @@ import SEO from '../components/SEO';
 import QuoteForm from '../components/QuoteForm';
 import { api } from '../lib/api';
 import { images } from '../lib/images';
-
-const PHONE = import.meta.env.VITE_PHONE || '+15514263018';
-const PHONE_DISPLAY = '(551) 426-3018';
+import { ADDRESS, EMAIL, PHONE, PHONE_DISPLAY } from '../lib/contactInfo';
 
 const inputClass =
   'border border-gray-200 rounded-lg px-4 py-3 w-full focus:outline-none focus:ring-2 focus:ring-gold-500 focus:border-transparent bg-gray-50 transition-all duration-300';
@@ -77,6 +75,16 @@ export default function Contact() {
 
             {/* Info blocks */}
             <div className="space-y-5 mb-8">
+              <div>
+                <p className="text-white/40 text-xs uppercase tracking-wider mb-1">Address</p>
+                <p className="text-white font-medium leading-relaxed">{ADDRESS}</p>
+              </div>
+              <div>
+                <p className="text-white/40 text-xs uppercase tracking-wider mb-1">Email</p>
+                <a href={`mailto:${EMAIL}`} className="text-gold-400 font-medium hover:text-gold-500 transition-colors">
+                  {EMAIL}
+                </a>
+              </div>
               <div>
                 <p className="text-white/40 text-xs uppercase tracking-wider mb-1">Business Hours</p>
                 <p className="text-white font-medium">Mon–Fri: 7 AM – 6 PM</p>

@@ -1,12 +1,12 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Logo from './Logo';
+import { ADDRESS, COMPANY_NAME, EMAIL, PHONE, PHONE_DISPLAY } from '../lib/contactInfo';
 
 const quickLinks = [
   { to: '/about', label: 'About Us' },
   { to: '/services', label: 'Services' },
   { to: '/portfolio', label: 'Projects' },
-  { to: '/pricing', label: 'Pricing' },
   { to: '/blog', label: 'Blog' },
   { to: '/contact', label: 'Contact' },
 ];
@@ -64,8 +64,8 @@ export default function Footer() {
               imgClassName="h-16 w-auto max-w-[280px] object-contain"
             />
             <p className="text-sm leading-relaxed mb-6 max-w-sm">
-              Windco is your trusted partner for premium window and door installation. Quality craftsmanship,
-              lasting results.
+              {COMPANY_NAME} — commercial dock, overhead door, and residential garage door services
+              across New Jersey.
             </p>
             <div className="flex gap-3">
               {socialLinks.map((social) => (
@@ -99,17 +99,15 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Contact</h4>
             <ul className="space-y-3 text-sm">
-              <li className="leading-relaxed">
-                Jl. Sunset Road No.815, Kuta, Bali 80361
-              </li>
+              <li className="leading-relaxed">{ADDRESS}</li>
               <li>
-                <a href="tel:+62815876218" className="text-gold-400 font-semibold hover:text-gold-500 transition-colors">
-                  (+62) 81587 6218
+                <a href={`tel:${PHONE}`} className="text-gold-400 font-semibold hover:text-gold-500 transition-colors">
+                  {PHONE_DISPLAY}
                 </a>
               </li>
               <li>
-                <a href="mailto:support@domain.com" className="hover:text-gold-400 transition-colors">
-                  support@domain.com
+                <a href={`mailto:${EMAIL}`} className="hover:text-gold-400 transition-colors">
+                  {EMAIL}
                 </a>
               </li>
             </ul>
@@ -140,7 +138,7 @@ export default function Footer() {
               </form>
             </div>
             <p className="text-xs text-white/40 shrink-0">
-              © {new Date().getFullYear()} Windco. All rights reserved.
+              © {new Date().getFullYear()} {COMPANY_NAME}. All rights reserved.
             </p>
           </div>
         </div>

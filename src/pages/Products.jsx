@@ -48,8 +48,8 @@ export default function Products() {
               Quality door products and commercial equipment for every application — from
               warehouse docks to residential garage doors.
             </p>
-            <Link to="/pricing" className="btn-outline mt-6 inline-block">
-              View Pricing Plans
+            <Link to="/contact" className="btn-outline mt-6 inline-block">
+              Get a Quote
             </Link>
           </motion.div>
         </div>
@@ -165,10 +165,9 @@ export default function Products() {
             <h2 className="text-xl font-bold text-navy-900">Not sure which product you need?</h2>
             <p className="text-gray-500 text-sm mt-1">Our experts will help you choose the right solution.</p>
           </div>
-          <div className="flex gap-3">
-            <Link to="/contact" className="btn-primary !px-6 !py-2.5 !text-sm">Get a Quote</Link>
-            <Link to="/pricing" className="btn-outline !px-6 !py-2.5 !text-sm">View Pricing</Link>
-          </div>
+          <Link to="/contact" className="btn-primary !px-6 !py-2.5 !text-sm">
+            Get a Quote
+          </Link>
         </div>
       </section>
     </>

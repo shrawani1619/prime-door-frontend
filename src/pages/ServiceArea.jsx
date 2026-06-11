@@ -3,8 +3,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import SEO from '../components/SEO';
 import { images } from '../lib/images';
-
-const PHONE = import.meta.env.VITE_PHONE || '+15514263018';
+import { PHONE, PHONE_DISPLAY } from '../lib/contactInfo';
 
 const counties = [
   {
@@ -196,7 +195,7 @@ export default function ServiceArea() {
                       Request Service in {selected.short}
                     </Link>
                     <a href={`tel:${PHONE}`} className="btn-outline !px-6 !py-2.5 !text-sm text-center">
-                      Call (551) 426-3018
+                      Call {PHONE_DISPLAY}
                     </a>
                   </div>
                 </div>

@@ -3,9 +3,7 @@ import { motion } from 'framer-motion';
 import SEO from '../SEO';
 import QuoteForm from '../QuoteForm';
 import { serviceNav } from '../../lib/serviceNav';
-
-const PHONE = import.meta.env.VITE_PHONE || '+62815876218';
-const PHONE_DISPLAY = '(+62)81587 6218';
+import { PHONE, PHONE_DISPLAY } from '../../lib/contactInfo';
 
 export default function ServicePageLayout({
   seoTitle,

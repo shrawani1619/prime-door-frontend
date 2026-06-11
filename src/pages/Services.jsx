@@ -7,9 +7,9 @@ import SectionHeading from '../components/ui/SectionHeading';
 import QuoteForm from '../components/QuoteForm';
 import { images } from '../lib/images';
 import { servicesList } from '../lib/servicesData';
+import { ADDRESS, EMAIL, PHONE, PHONE_DISPLAY } from '../lib/contactInfo';
 
-const PHONE = '(+62)81587 6218';
-const PHONE_HREF = 'tel:+62815876218';
+const PHONE_HREF = `tel:${PHONE}`;
 
 const consultationHighlights = [
   'Quick installation',
@@ -20,20 +20,12 @@ const consultationHighlights = [
 
 const locations = [
   {
-    city: 'Kuta, Bali',
-    address: 'Jl. Sunset Road No.815, Kuta - Bali 80361',
-    email: 'support@domain.com',
-    phone: '(+62)81587 6218',
-    phoneHref: 'tel:+62815876218',
-    hours: 'Mon-Fri 08:00 - 17:00',
-  },
-  {
-    city: 'Denpasar, Bali',
-    address: 'Jl. Raya Puputan No 142, Denpasar, Bali - 80234',
-    email: 'support@domain.com',
-    phone: '(+62)81587 6217',
-    phoneHref: 'tel:+62815876217',
-    hours: 'Mon-Fri 08:00 - 17:00',
+    city: 'Englewood, NJ',
+    address: ADDRESS,
+    email: EMAIL,
+    phone: PHONE_DISPLAY,
+    phoneHref: PHONE_HREF,
+    hours: 'Mon–Fri: 7 AM – 6 PM',
   },
 ];
 
@@ -189,7 +181,7 @@ export default function Services() {
                 Contact Us
               </Link>
               <a href={PHONE_HREF} className="btn-outline">
-                {PHONE}
+                {PHONE_DISPLAY}
               </a>
             </div>
           </motion.div>

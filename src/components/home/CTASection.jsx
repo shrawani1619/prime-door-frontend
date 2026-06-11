@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { images } from '../../lib/images';
+import { PHONE } from '../../lib/contactInfo';
 
 export default function CTASection() {
   return (
@@ -29,7 +30,7 @@ export default function CTASection() {
             <Link to="/contact" className="btn-primary">
               Request a Quote
             </Link>
-            <a href={`tel:${import.meta.env.VITE_PHONE || '+15514263018'}`} className="btn-secondary">
+            <a href={`tel:${PHONE}`} className="btn-secondary">
               Contact Us Now
             </a>
           </div>

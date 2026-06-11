@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-
-const PHONE = import.meta.env.VITE_PHONE || '+15514263018';
+import { PHONE, PHONE_DISPLAY } from '../lib/contactInfo';
 
 export default function EmergencyCTA() {
   return (
@@ -25,7 +24,7 @@ export default function EmergencyCTA() {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a href={`tel:${PHONE}`} className="btn-primary">
-            Call Now: (551) 426-3018
+            Call Now: {PHONE_DISPLAY}
           </a>
           <Link to="/services" className="btn-secondary">
             Learn More
